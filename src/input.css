@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .sticky-navbar {
+    display: none;
+    height: 60px;
+    width: 100%;
+    position: fixed;
+    background-color: white;
+    z-index: 2;
+    top: 0;
+  }
+  .sticky {
+    display: fixed;
+  }
+}

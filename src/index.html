@@ -8,15 +8,25 @@
     <title>Document</title>
   </head>
   <body class="text-gray-900 text-lg bg-white-700">
-    <div></div>
-    <div></div>
-    <nav class="flex justify-center w-full bg-lime-600">
+    <nav
+      id="navbar"
+      class="flex justify-center w-full bg-lime-600 sticky top-0"
+    >
       <div class="flex">
         <div class="p-1">Programmazione</div>
         <div class="p-1">Sale</div>
       </div>
     </nav>
-    <div id="film-list" class="bg-black text-white"></div>
-    <script src="index.js" type="application/javascript"></script>
+    <div class="container flex justify-center">
+      <div class="w-4/6">
+        <div></div>
+        <div></div>
+
+        <div id="film-list" class="bg-black text-white">
+          <div id="film-details" class="hidden"></div>
+        </div>
+        <script src="index.js" type="application/javascript"></script>
+      </div>
+    </div>
   </body>
 </html>
