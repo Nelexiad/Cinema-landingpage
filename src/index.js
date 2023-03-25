@@ -1,3 +1,5 @@
+const navbar = document.getElementById("navbar");
+
 const apiMovies = async () => {
   try {
     const response = await fetch(
@@ -5,12 +7,13 @@ const apiMovies = async () => {
     );
     const result = await response.json();
     const listFilm = document.getElementById("film-list");
+    const filmDetails = document.getElementById("film-details");
 
     for (let i = 0; i < 10; i++) {
       const current = result.results[i];
       console.log(current);
 
-      const itemHTML = `<div class="flex ">
+      const itemHTML = `<div class="flex pt-24">
       <div>
          <img src="https://image.tmdb.org/t/p/w185/${current.poster_path}"/>
       </div>
@@ -18,7 +21,7 @@ const apiMovies = async () => {
           ${current.original_title}
       </div>
   </div>`;
-      listFilm.insertAdjacentHTML("beforeend", itemHTML);
+      const detailsHTML = listFilm.insertAdjacentHTML("beforeend", itemHTML);
     }
 
     console.log(result);
@@ -27,3 +30,16 @@ const apiMovies = async () => {
   }
 };
 apiMovies();
+
+// window.addEventListener(
+//   "scroll",
+//   function (event) {
+//     let top = window.scrollY;
+//     if (top == 300 || top == 350 || top == 400 || top == 500) {
+//       navbar.add("sticky", "sticky-navbar");
+//     } else if (top == 250 || top == 200 || top == 100 || top == 0) {
+//       navbar.remove("sticky", "sticky-navbar");
+//     }
+//   },
+//   false
+// );
