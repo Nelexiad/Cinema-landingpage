@@ -2,6 +2,7 @@ const listFilm = document.getElementById("film-list");
 const filmDetails = document.getElementById("film-details");
 
 let result = [];
+let filmNames = {};
 
 const showDetails = (id) => {
   const detailsDiv = document.getElementById(`details:${id}`);
@@ -19,21 +20,26 @@ const apiMovies = async () => {
     for (let i = 0; i < 10; i++) {
       const current = result.results[i];
 
-      const itemHTML = `<div id="current-film" class="flex pt-24" onclick="showDetails('${current.original_title}')">
+      const itemHTML = `<div id="current-film${i}" class="flex pt-24 relative" >
         <div>
           <img src="https://image.tmdb.org/t/p/w185/${current.poster_path}"/>
         </div>
-        <div class="flex items-center font-bold">
-          ${current.original_title}
+        <div class="flex flex-col justify-center items-start gap-y-14 font-bold pl-5">
+          <div>${current.original_title}</div>
+          <div class="flex pl-5" id="trama:${current.original_title}"       onclick="showDetails('${current.original_title}')">Trama</div>
+          <div class="hidden max-w-md h-20 border-2 border-red-800 overflow-y-scroll absolute bottom-6 right-64" id="details:${current.original_title}">${current.overview}</div>
         </div>
+        
       </div>`;
-      const detailsHTML = `<div class="hidden" id="details:${current.original_title}" class="hidden">${current.overview}</div>`;
 
       listFilm.insertAdjacentHTML("beforeend", itemHTML);
-      filmDetails.insertAdjacentHTML("beforeend", detailsHTML);
+      filmNames[current.original_title] = {
+        overview: current.overview,
+        poster_path: current.poster_path,
+        // Aggiungi altre proprietà che ti servono
+      };
     }
-
-    console.log(result);
+    localStorage.setItem("filmNames", JSON.stringify(filmNames));
   } catch (error) {
     console.log(error);
   }
