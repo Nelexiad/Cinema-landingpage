@@ -21,8 +21,8 @@ const apiMovies = async () => {
       const current = result.results[i];
 
       const itemHTML = `<div id="current-film${i}" class="flex pt-24 relative" >
-        <div>
-          <img src="https://image.tmdb.org/t/p/w185/${current.poster_path}"/>
+        <div class="pl-5">
+          <img class="" src="https://image.tmdb.org/t/p/w185/${current.poster_path}"/>
         </div>
         <div class="flex flex-col justify-center items-start gap-y-14 font-bold pl-5">
           <div>${current.original_title}</div>
