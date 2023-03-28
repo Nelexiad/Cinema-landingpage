@@ -4,29 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="../dist/output.css" rel="stylesheet" />
+    <link href="../src/output.css" rel="stylesheet" />
     <title>Document</title>
   </head>
-  <body class="text-gray-900 text-lg bg-white-700">
-    <nav
-      id="navbar"
-      class="flex justify-center w-full bg-lime-600 sticky top-0"
-    >
-      <div class="flex">
-        <div class="p-1">Programmazione</div>
-        <div class="p-1">Sale</div>
+  <body class="text-gray-900 text-lg bg-white-700 flex flex-col">
+    <header class="w-full">
+      <div>
+        <img src="../src/images/landcinemaedit2.png" class="w-full h-72" />
       </div>
-    </nav>
-    <div class="container flex justify-center">
-      <div class="w-4/6">
-        <div></div>
-        <div></div>
-
-        <div id="film-list" class="bg-black text-white">
-          <div id="film-details"></div>
+      <nav
+        id="navbar"
+        class="flex justify-center w-full bg-custom-red100 z-1000 h-16"
+      >
+        <div class="flex justify-start items-center gap-10 w-full">
+          <div class="pl-5">
+            <img
+              class="border-4 border-radius75"
+              src="../src/images/Cinemille75.jpg"
+              height="50"
+              width="50"
+            />
+          </div>
+          <div class="p-1 text-base font-extrabold text-black">
+            PROGRAMMAZIONE
+          </div>
+          <div class="p-1 text-base font-extrabold text-black">SALE</div>
         </div>
-        <script src="index.js" type="application/javascript"></script>
+      </nav>
+    </header>
+    <div class="container flex justify-center gap-10 bg-custom-red">
+      <div
+        id="film-list"
+        class="bg-custom-red400 text-white flex flex-col items-center justify-center max-h-full w-5/6 gap-10"
+      >
+        <div class="h-32 w-full"></div>
       </div>
+      <script src="index.js" type="application/javascript"></script>
     </div>
   </body>
 </html>

@@ -2,17 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
+@layer components {
   .sticky-navbar {
-    display: none;
+    display: flex;
     height: 60px;
     width: 100%;
     position: fixed;
     background-color: white;
-    z-index: 2;
+    z-index: 1;
     top: 0;
   }
-  .sticky {
-    display: fixed;
+}
+
+@layer utilities {
+  .z-1000 {
+    z-index: 1000;
+  }
+  .bg-custom-red {
+    background-color: #cb0243;
+  }
+  .bg-custom-red100 {
+    background-color: #940834;
+  }
+  .bg-custom-red400 {
+    background-color: #490015;
+  }
+  .bg-custom-yellow {
+    background-color: #ffde59;
+  }
+  .border-radius75 {
+    border-radius: 75px;
+    border-color: black;
+  }
+  .text-yellow {
+    color: #ffde59;
   }
 }
